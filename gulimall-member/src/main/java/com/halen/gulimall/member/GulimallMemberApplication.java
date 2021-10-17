@@ -1,9 +1,15 @@
 package com.halen.gulimall.member;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
+@EnableFeignClients(basePackages = "com.halen.gulimall.member.feign")
+@EnableDiscoveryClient
 @SpringBootApplication
+@MapperScan("com.halen.gulimall.member.dao")
 public class GulimallMemberApplication {
 
     public static void main(String[] args) {

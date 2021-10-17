@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test_route
+          uri: http://localhost:8848/
+          predicates:
+            - Query=url,baidu
+
+        - id: qq_route
+          uri: http://localhost:8848/
+          predicates:
+            - Query=url,qq
